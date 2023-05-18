@@ -42,6 +42,7 @@ public class BnbService {
     //Update product
     public Bnb updateBnb(Bnb bnb){
         Bnb existingBnb = bnbRepository.findById(bnb.getId()).orElse(null);
+        assert existingBnb != null;
         existingBnb.setName(bnb.getName());
         existingBnb.setLocation(bnb.getLocation());
         existingBnb.setAvailability(bnb.isAvailability());
